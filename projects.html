@@ -114,6 +114,22 @@
             font-size: 0.9em;
             margin-top: 2em;
         }
+
+        .download-button {
+        display: inline-block;
+        padding: 0.6em 1.2em;
+        margin-top: 0.5em;
+        color: #fff;
+        background-color: #1a8cff;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+    .download-button:hover {
+        background-color: #0056b3;
+    }
     </style>
 </head>
 <body>
@@ -131,26 +147,22 @@
     </div>
 
         <!-- Remaining resume sections go here as above -->
-    <div class="container">
-        <!-- Xina Game Section -->
-        <section id="Flappy-Xina">
-            <h2 class="section-title">Flappy Xina Game</h2>
-            <p><strong>Flappy Xina</strong> is a game developed using <strong>C#</strong> for the Unity engine, inspired by the classic "Flappy Bird" gameplay. In this version, players control a character named Xina, navigating through obstacles and aiming for a high score. The game was built to explore physics mechanics and game development in Unity.</p>
-            
-            <div class="image-container">
-                <img src="xina.jpg" alt="Screenshot of Flappy Xina game" style="max-width: 100%; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
-            </div>
-        </section>
-        
-
-        
-
-       
-
-        
-
-
-    </div>
+        <div class="container">
+            <!-- Xina Game Section -->
+            <section id="Flappy-Xina">
+                <h2 class="section-title">Flappy Xina Game</h2>
+                <p><strong>Flappy Xina</strong> is a game developed using <strong>C#</strong> for the Unity engine, inspired by the classic "Flappy Bird" gameplay. In this version, players control a character named Xina, navigating through obstacles and aiming for a high score. The game was built to explore physics mechanics and game development in Unity.</p>
+                
+                <div class="image-container">
+                    <img src="xina.jpg" alt="Screenshot of Flappy Xina game" style="max-width: 100%; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+                </div>
+                
+                <!-- Download Button -->
+                <div style="margin-top: 1em;">
+                    <a href="FlappyXina.zip" download class="download-button">Download Game</a>
+                </div>
+            </section>
+        </div>
 
     <footer>
         &copy; 2024 Nathaniel Smith - All rights reserved.
