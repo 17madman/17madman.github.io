@@ -3,42 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nathaniel Smith - Portfolio</title>
+    <title>Nathaniel Smith - Home</title>
     <style>
-        /* General Reset and Font */
-        * {
+        /* General Styling */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
             color: #333;
-            line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
         /* Header */
         header {
-            background-color: #1a1a2e;
-            color: #f0f0f0;
-            padding: 1em 0.5em;
+            background: linear-gradient(to right, #1a1a2e, #16213e);
+            color: white;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            padding: 4em 1em;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
         header h1 {
-            color: #87cefa;
-            font-size: 2.5em;
-            margin-bottom: 0.2em;
+            font-size: 3.5em;
+            margin-bottom: 0.3em;
         }
         header p {
-            font-size: 1.1em;
+            font-size: 1.5em;
+            margin-bottom: 1em;
         }
-        header a {
-            color: #87cefa;
+        header .cta {
+            background-color: #1a8cff;
+            color: white;
+            padding: 0.8em 1.5em;
             text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        header .cta:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
         }
 
         /* Navbar */
@@ -46,13 +52,15 @@
             display: flex;
             justify-content: center;
             background-color: #1a1a2e;
-            padding: 0.5em 0;
-            margin-top: -1em;
+            padding: 1em 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         .navbar a {
             color: #f0f0f0;
             text-decoration: none;
-            padding: 0.5em 1.5em;
+            padding: 0.8em 1.5em;
             font-size: 1.1em;
             transition: background-color 0.3s;
         }
@@ -62,57 +70,66 @@
             border-radius: 5px;
         }
 
-        /* Main Container */
-        .container {
-            width: 80%;
+        /* Section Styling */
+        section {
             max-width: 1100px;
             margin: 2em auto;
-            padding: 1.5em;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 2em;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
-
-        /* Section Titles */
-        .section-title {
-            font-size: 1.5em;
+        section h2 {
             color: #1a1a2e;
-            border-bottom: 2px solid #87cefa;
+            border-bottom: 3px solid #87cefa;
             padding-bottom: 5px;
-            margin-bottom: 1em;
+            margin-bottom: 1.5em;
+            font-weight: 600;
+        }
+        section p {
+            font-size: 1.1em;
+            line-height: 1.8em;
         }
 
-        /* Content Styling */
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 1em 0;
+        /* Skills Section */
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5em;
+            justify-items: center;
         }
-        li {
-            margin-bottom: 0.5em;
+        .skills div {
+            text-align: center;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 1em;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        p {
-            margin-bottom: 1em;
-            line-height: 1.8;
+        .skills div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
-
-        /* Project Links */
-        .project-list a {
-            color: #1a8cff;
-            text-decoration: none;
-        }
-        .project-list a:hover {
-            text-decoration: underline;
+        .skills img {
+            max-width: 100px;
+            margin-bottom: 0.1em;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 1em;
+            padding: 2em;
             background-color: #1a1a2e;
             color: #f0f0f0;
-            font-size: 0.9em;
-            margin-top: 2em;
+        }
+
+        /* Contact Links */
+        #contact a {
+            color: #1a8cff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        #contact a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -120,93 +137,127 @@
 
     <header>
         <h1>Nathaniel Smith</h1>
-        <p>Bellefonte, PA | 814-880-0685 | <a href="mailto:nathanielsmith9158@gmail.com">nathanielsmith9158@gmail.com</a></p>
+        <p>Engineer | Innovator | Problem-Solver</p>
+        <a href="resume.pdf" class="cta">View My Resume</a>
     </header>
 
     <!-- Navigation Tabs -->
     <div class="navbar">
-        <a href="index.html">Resume</a>
-        <a href="projects.html">Projects</a>
-        <a href="https://github.com/17madman" target="_blank">GitHub</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
     </div>
 
-    <div class="container">
-        <!-- Education Section -->
-        <section id="education">
-            <h2 class="section-title">Education</h2>
-            <ul class="education-list">
-                <li><strong>The Pennsylvania State University, University Park Campus</strong>, 2021 - 2025</li>
-                <li>Bachelor of Science in Computer Engineering, Graduating 12/2025</li>
-                <li>GPA: 3.0</li>
-            </ul>
-        </section>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Hello! I'm Nathaniel Smith, a Computer Engineering student from The Pennsylvania State University with a passion for innovation and problem-solving. 
+            I've gained experience through courses, research, and personal projects. I'm skilled in programming, machine learning, prototyping, and PCB design, 
+            and I thrive in team environments where I can lead and learn.
+        </p>
+    </section>
 
-        <!-- Professional Work Experience Section -->
-        <section id="experience">
-            <h2 class="section-title">Professional Work Experience</h2>
-            <ul class="experience-list">
-                <li><strong>Research</strong> - Tohoku University (April 2024 - August 2024)</li>
-                <p>Developed an LSTM machine learning algorithm to predict network traffic, improving efficiency by 2% over reactive methods.</p>
-                <li><strong>Tech Support Assistant</strong> - Jackson Hewitt Tax Service (2020 - 2021)</li>
-                <li><strong>Auxiliary Police Officer</strong> - Penn State University (Spring 2023 - Fall 2023)</li>
-                <li><strong>Voting Registration</strong> - Project 26 (2024 - 2024)</li>
-            </ul>
-        </section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills">
+            <div>
+                <img src="python-logo.png" alt="Python">
+                <p>Python</p>
+            </div>
+            <div>
+                <img src="cpp-logo.png" alt="C++">
+                <p>C++</p>
+            </div>
+            <div>
+                <img src="embedded-logo.png" alt="Embedded Systems">
+                <p>Embedded Systems</p>
+            </div>
+            <div>
+                <img src="java-logo.png" alt="Python">
+                <p>Java</p>
+            </div>
+            <div>
+                <img src="pcb.png" alt="Python">
+                <p>PCB Design</p>
+            </div>
+            <div>
+                <img src="multisim-logo.png" alt="Python">
+                <p>Multisim</p>
+            </div>
+            <div>
+                <img src="arduino-logo.png" alt="Python">
+                <p>Microcontroller Programming</p>
+            </div>
+            <div>
+                <img src="verilog.jpg" alt="Python">
+                <p>Verilog Programming</p>
+            </div>
+            <div>
+                <img src="ML.png" alt="Python">
+                <p>Machine Learning Experience</p>
+            </div>
+            <div>
+                <img src="HTML.png" alt="Python">
+                <p>HTML Development</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- Awards Section -->
-        <section id="awards">
-            <h2 class="section-title">Awards</h2>
-            <ul>
-                <li><strong>Lockheed Martin Design Excellence Award</strong> (Fall 2024)</li>
-                <p>Team lead for a remote-controlled IV injection system, achieving 1st place in Penn State’s Fall 2024 Capstone Showcase.</p>
-                <li><strong>Gilman Grant</strong> (Spring 2024)</li>
-                <p>Fully funded research at Tohoku University; granted Federal Non-Competitive Eligibility.</p>
-            </ul>
-        </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="container">
+            <!-- Xina Game Section -->
+            <section id="IVAdmin">
+                <h2 class="section-title">Senior Capstone Project: Enhancing Patient Safety Through Remote-Controlled Robotics for Intravenous Administration</h2>
+                <p>For my senior design project, I led a team of myself and 4 others to create a prototype for a remote controlled IV injection system. 
+                Over the course of one semester and three prototypes, we built and refined a design that allowed a single nurse to control dozens of IV pumps all at once, 
+                from a portable remote control monitor we built ourselves (using a Raspberry pi 4B, a self-made power supply, a simple LCD screen and a 3D printed case).
+                Our final prototype ended up being impressive enough to win first place at the end of semester competition, winning over 62 other teams and awarding us the Lockheed Martin Design Excellence Award.</p>
 
-        <!-- Software Projects Section -->
-        <section id="projects">
-            <h2 class="section-title">Software Projects</h2>
-            <p>All projects available on my <a href="https://github.com/17madman" target="_blank">GitHub</a>.</p>
-            <ul class="project-list">
-                <li><strong>Course Scheduler</strong> - Java, SQL, Derby Database</li>
-                <p>Application for course creation and enrollment by students.</p>
-                <li><strong>AI Clone Bot</strong> - Python</li>
-                <p>Chatbot using GPT-3.5 Turbo API and ElevenLabs AI voice cloning software.</p>
-                <li><strong>CMPEN 331 Final Project</strong> - Verilog</li>
-                <p>Designed and implemented a 32-bit MIPS-based processor.</p>
-            </ul>
-        </section>
+                <!-- Video Embed 
+                <div class="video-container" style="margin: 1em 0;">
+                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/L7REFd0MY6E" 
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div> -->
+                
+                <div class="image-container">
+                    <img src="capstone1.jpg" alt="Design Process" style="max-width: 100%; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+                </div>
+                <div class="image-container">
+                    <img src="capstoneAward.jpg" alt="Lockheed Award" style="max-width: 100%; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+                </div>
+                
 
-        <!-- Extracurricular Activities Section -->
-        <section id="extracurriculars">
-            <h2 class="section-title">Extracurricular Activities</h2>
-            <ul>
-                <li><strong>Special Operations Officer</strong> - Penn State IEEE Chapter (2021 - Present)</li>
-                <p>Developed workshops and led projects, such as bots for spam control and event reminders.</p>
-                <li><strong>Member</strong> - Ohana THON Organization (2023 - 2024)</li>
-            </ul>
-        </section>
+            </section>
+        </div>
 
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2 class="section-title">Skills & Abilities</h2>
-            <ul class="skills-list">
-                <li>Programming in Python, Java, C#, C, Assembly</li>
-                <li>Experience using Visual Studio</li>
-                <li>PCB Design and Assembly</li>
-                <li>Circuit Development (via Multisim)</li>
-                <li>Microcontroller Programming (Arduino, ESP32)</li>
-                <li>Verilog Programming</li>
-                <li>AI and ML Experience</li>
-                <li>HTML Development</li>
-            </ul>
-        </section>
-    </div>
+        <div class="container">
+            <!-- NathanBot Section -->
+            <section id="NathanBot">
+                <h2 class="section-title">Nathan Bot</h2>
+                <p><strong>Nathan Bot</strong> is a Discord Bot developed using <strong>Python</strong>. It makes use of ChatGPT and ElevenLabs API, in order to create a virtual discord user that can parse text and generate a response, even converting it into speech of a given person's voice. I used this to create an AI 'clone' of myself. It also has further utility, such as being able to play music from Youtube and Spotify in voice chat channels.</p>
+                
+                <div class="image-container">
+                    <img src="NathanBot.png" alt="Screenshot of Nathan Bot" style="max-width: 100%; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+                </div>
+                
+                <!-- Download Button -->
+                <div style="margin-top: 1em;">
+                    <a href="https://github.com/17madman">Download From Github</a>
+                </div>
+            </section>
+        </div>
+    </section>
 
-    <footer>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:nathanielsmith9158@gmail.com">nathanielsmith9158@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/17madman" target="_blank">github.com/17madman</a></p>
+    </section>
 
-    </footer>
 
 </body>
 </html>
